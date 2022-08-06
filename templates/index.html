@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h2>Loan status prediction</h2>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="BorrowerRate" placeholder="BorrowerRate in range   [0.04:0.36]" required="required" />
+        <input type="text" name="EstimatedEffectiveYield" placeholder="EstimatedEffectiveYield in range   [-0.18:0.32]" required="required" />
+		<input type="text" name="ProsperScore" placeholder="ProsperScore in range   [1:11]" required="required" />
+		<input type="text" name="OpenRevolvingMonthlyPayment" placeholder="OpenRevolvingMonthlyPayment in range   [0:13765]" required="required" />
+ 		<input type="text" name="RevolvingCreditBalance" placeholder="RevolvingCreditBalance in range   [0:999165]" required="required" />
+ 		<input type="text" name="StatedMonthlyIncome" placeholder="StatedMonthlyIncome in range   [0.25:483333]" required="required" />
+        <input type="text" name="LoanCurrentDaysDelinquent" placeholder="LoanCurrentDaysDelinquent in range   [0:1593]" required="required" />
+        <input type="text" name="LoanMonthsSinceOrigination" placeholder="LoanMonthsSinceOrigination in range   [0:56]" required="required" />
+		<input type="text" name="MonthlyLoanPayment" placeholder="MonthlyLoanPayment in range   [0:2251]" required="required" />
+		<input type="text" name="Investors" placeholder="Investors in range   [1:1189]" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

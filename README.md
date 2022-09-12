@@ -10,5 +10,5 @@ Making a predictor for the safe clients in the P2P market according to some comm
 *Using **Flask** to make a web application 
 *Then Deploying it using **Heroku**
 
-##Application link 
+## Application link 
 [LINK](https://prosperloana.herokuapp.com/)
